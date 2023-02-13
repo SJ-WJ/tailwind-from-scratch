@@ -1,8 +1,11 @@
 const input = document.getElementById('link-input');
 const linkform = document.getElementById('link-form');
 const errmsg = document.getElementById('err-msg');
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
 
 linkform.addEventListener('submit', formSubmit);
+btn.addEventListener('click', navToggle);
 
 //Validate a URL
 function validURL(str) {
@@ -29,4 +32,11 @@ function formSubmit(e) {
     input.classList.remove('border-red');
     alert('Success');
   }
+}
+
+function navToggle () {
+  btn.classList.toggle('open');
+  menu.classList.toggle('flex');
+  menu.classList.toggle('hidden');
+
 }
